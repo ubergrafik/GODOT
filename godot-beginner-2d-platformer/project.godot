@@ -10,16 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Dodge the creeps!"
-run/main_scene="res://Main.tscn"
+config/name="godot-beginner-2d-platformer"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/width=480
-window/size/height=720
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [physics]
 
