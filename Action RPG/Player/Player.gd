@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const ACCELERATION = 500
+export var ACCELERATION = 500
 # Setting up a constant for use in movement smoothing later
-const MAX_SPEED = 80
-const ROLL_SPEED = 120
-const FRICTION = 500
+export var MAX_SPEED = 80
+export var ROLL_SPEED = 120
+export var FRICTION = 500
 
 # enum - sets a set of constants - and gives it a value - 0, 1, 2 etc.
 enum{
@@ -18,7 +18,7 @@ enum{
 # Zero vector, a vector with all components set to 0.
 # This is declared in the scope by adding it in here...
 var velocity = Vector2.ZERO
-var roll_vector = Vector2.LEFT
+var roll_vector = Vector2.DOWN
 
 var state = MOVE
 
@@ -69,7 +69,7 @@ func move_state(delta):
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
-	print(velocity)
+	
 	
 	# do the stuff!
 	# delta - how long the previous frame took - because it is based on the 
