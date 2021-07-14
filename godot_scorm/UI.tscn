@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://btn_setPassed.gd" type="Script" id=1]
+[ext_resource path="res://btn_setSuccess.gd" type="Script" id=2]
+[ext_resource path="res://btn_getpassfail.gd" type="Script" id=3]
+[ext_resource path="res://btn_getstatus.gd" type="Script" id=4]
+[ext_resource path="res://passfail_status.gd" type="Script" id=5]
+[ext_resource path="res://btn_submitScore.gd" type="Script" id=6]
+[ext_resource path="res://success_status.gd" type="Script" id=7]
+[ext_resource path="res://current_Score.gd" type="Script" id=8]
+[ext_resource path="res://btn_getScore.gd" type="Script" id=9]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="lbl_static_PassFail" type="Label" parent="."]
+margin_left = 518.978
+margin_top = 228.93
+margin_right = 621.978
+margin_bottom = 242.93
+text = "Pass/Fail Status:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_static_SuccessStatus" type="Label" parent="."]
+margin_left = 519.919
+margin_top = 305.654
+margin_right = 618.919
+margin_bottom = 326.654
+text = "Success Status:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_static_ScoreValue" type="Label" parent="."]
+margin_left = 303.389
+margin_top = 363.713
+margin_right = 390.389
+margin_bottom = 381.713
+text = "Score Value:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_static_CurrentScore" type="Label" parent="."]
+margin_left = 522.357
+margin_top = 378.2
+margin_right = 622.357
+margin_bottom = 400.2
+text = "Current Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_setPass" type="Button" parent="."]
+margin_left = 275.276
+margin_top = 227.287
+margin_right = 391.276
+margin_bottom = 247.287
+text = "Set Pass"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_getpassfail" type="Button" parent="."]
+margin_left = 414.335
+margin_top = 227.168
+margin_right = 509.335
+margin_bottom = 247.168
+text = "Get Pass/Fail"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_setSuccess" type="Button" parent="."]
+margin_left = 276.395
+margin_top = 299.773
+margin_right = 399.395
+margin_bottom = 319.773
+text = "Set Success"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_getStatus" type="Button" parent="."]
+margin_left = 415.31
+margin_top = 301.947
+margin_right = 495.31
+margin_bottom = 321.947
+text = "Get Status"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_submitScore" type="Button" parent="."]
+margin_left = 212.761
+margin_top = 374.427
+margin_right = 283.761
+margin_bottom = 394.427
+text = "Set Score"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_getScore" type="Button" parent="."]
+margin_left = 410.012
+margin_top = 375.05
+margin_right = 499.012
+margin_bottom = 395.05
+text = "Get Score"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_scoreValue" type="TextEdit" parent="."]
+margin_left = 306.929
+margin_top = 387.259
+margin_right = 381.929
+margin_bottom = 411.259
+text = "42.00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_passFailStatus" type="Label" parent="."]
+margin_left = 630.562
+margin_top = 229.93
+margin_right = 704.562
+margin_bottom = 243.93
+text = "UNLOADED"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_successStatus" type="Label" parent="."]
+margin_left = 621.789
+margin_top = 307.654
+margin_right = 695.789
+margin_bottom = 321.654
+text = "UNLOADED"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_currentScore" type="Label" parent="."]
+margin_left = 625.93
+margin_top = 377.903
+margin_right = 699.93
+margin_bottom = 391.903
+text = "UNLOADED"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="btn_setPass" to="btn_setPass" method="_on_Button_pressed"]
+[connection signal="pressed" from="btn_getpassfail" to="btn_getpassfail" method="_on_btn_getpassfail_pressed"]
+[connection signal="return_successStatus" from="btn_getpassfail" to="lbl_passFailStatus" method="_on_btn_getpassfail_return_successStatus"]
+[connection signal="pressed" from="btn_setSuccess" to="btn_setSuccess" method="_on_btn_markSuccess_pressed"]
+[connection signal="pressed" from="btn_getStatus" to="btn_getStatus" method="_on_btn_getstatus_pressed"]
+[connection signal="return_completionStatus" from="btn_getStatus" to="lbl_successStatus" method="_on_btn_getStatus_return_completionStatus"]
+[connection signal="pressed" from="btn_submitScore" to="btn_submitScore" method="_on_btn_submitScore_pressed"]
+[connection signal="pressed" from="btn_getScore" to="btn_getScore" method="_on_btn_getScore_pressed"]
+[connection signal="return_score" from="btn_getScore" to="lbl_currentScore" method="_on_btn_getScore_return_score"]
