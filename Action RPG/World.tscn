@@ -490,7 +490,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 position = Vector2( 160, 90 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 180 )
+region_rect = Rect2( 0, 0, 624, 400 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -505,10 +505,18 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 2, -65531, 0, 196608, -65530, 0, 6, -65529, 0, 1, -65528, 0, 1, -65527, 0, 1, -65526, 0, 2, 65535, 0, 65536, 0, 0, 65541, 1, 0, 131073, 2, 0, 131073, 3, 0, 131074, 6, 0, 131072, 7, 0, 131073, 8, 0, 131073, 9, 0, 65542, 10, 0, 65538, 131071, 0, 131072, 65536, 0, 131074, 65545, 0, 131072, 65546, 0, 131074, 262143, 0, 0, 196608, 0, 2, 196611, 0, 3, 196617, 0, 0, 196618, 0, 2, 327679, 0, 65536, 262144, 0, 131077, 262145, 0, 1, 262146, 0, 1, 262147, 0, 131079, 262152, 0, 0, 262153, 0, 131078, 262154, 0, 65538, 393215, 0, 65536, 327680, 0, 65537, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 131077, 327684, 0, 1, 327685, 0, 1, 327686, 0, 1, 327687, 0, 1, 327688, 0, 131078, 327689, 0, 65537, 327690, 0, 65538, 458751, 0, 131072, 393216, 0, 131073, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131073, 393224, 0, 131073, 393225, 0, 131073, 393226, 0, 131074 )
 
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 148, 38 )
+current = true
+smoothing_enabled = true
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 185.191, 63.2063 )
+position = Vector2( 148, 38 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D2")
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
@@ -522,7 +530,7 @@ position = Vector2( 192, 152 )
 position = Vector2( 248, 96 )
 
 [node name="Bush4" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 0, 80 )
+position = Vector2( 0, 112 )
 
 [node name="Bush5" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 256, 56 )
@@ -533,10 +541,10 @@ position = Vector2( 88, 48 )
 [node name="Grass" type="YSort" parent="YSort"]
 
 [node name="Grass" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 64, 104 )
+position = Vector2( 80, 112 )
 
 [node name="Grass2" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 56, 40 )
+position = Vector2( 80, 96 )
 
 [node name="Grass3" parent="YSort/Grass" instance=ExtResource( 6 )]
 position = Vector2( 192, 104 )
@@ -560,13 +568,13 @@ position = Vector2( 280, 112 )
 position = Vector2( 37, 1 )
 
 [node name="Tree" parent="YSort/Trees" instance=ExtResource( 9 )]
-position = Vector2( 107, 143 )
+position = Vector2( 75, 143 )
 
 [node name="Tree2" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 139, 15 )
 
 [node name="Bat" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 288, 128 )
+position = Vector2( 273, 116 )
 
 [node name="Bat2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 176, 120 )
@@ -574,7 +582,11 @@ position = Vector2( 176, 120 )
 [node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 32, 96 )
 
-[node name="HealthUI" parent="." instance=ExtResource( 8 )]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 62.0
