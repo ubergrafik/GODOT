@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/font_heading1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/font_body.tres" type="DynamicFont" id=2]
+[ext_resource path="res://screen grabs and ideas/h5p_interface1.PNG" type="Texture" id=3]
+
+[node name="Control" type="Control"]
+anchor_top = 0.027
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -15.2
+margin_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 500.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 400.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 464, 379 )
+texture = ExtResource( 3 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 27.0
+margin_top = 205.0
+margin_right = 902.0
+margin_bottom = 245.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -85.0
+margin_top = 2.0
+margin_right = -37.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 25.1091
+margin_top = 177.536
+margin_right = 409.109
+margin_bottom = 200.536
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.360784, 0.321569, 0.321569, 1 )
+text = "Used for searching, reports and copyright information"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 23.0808
+margin_top = 143.7
+margin_right = 96.0808
+margin_bottom = 170.7
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.145098, 0.145098, 1 )
+text = "Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 23.8909
+margin_top = 265.036
+margin_right = 104.891
+margin_bottom = 295.036
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.32549, 0.505882, 0.666667, 1 )
+text = "Heading"
+__meta__ = {
+"_edit_use_anchors_": false
+}
