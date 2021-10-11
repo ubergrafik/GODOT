@@ -22,6 +22,9 @@ const VIEWPORT_HEIGHT = 600
 onready var current_zoom = zoom_factor
 var image_draggable = false
 
+const drawItem = preload("res://Draw.tscn")
+
+
 func _ready():
 	updateZoomFactorText()
 
@@ -38,6 +41,12 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		if Input.is_action_just_pressed("click"):
 			image_draggable = true
 
+func _on_Button_draw_rect_pressed():
+	drawType("Rectangle")
+
+func _on_Button_draw_text_pressed():
+	drawType("Text")
+
 func _input(event):
 	if isActive:
 		if event.is_action_pressed("zoom_in"):
@@ -47,6 +56,10 @@ func _input(event):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and not event.pressed:
 				image_draggable = false
+		if event.is_action_pressed("draw_rectangle"):
+			drawType("Rectangle")
+		if event.is_action_pressed("draw_text"):
+			drawType("Text")
 
 func _process(delta):
 	if isActive:
@@ -81,10 +94,13 @@ func zoom(direction):
 func updateZoomFactorText():
 	zoomFactorText.text = str("Zoom: ", current_zoom)
 
+func drawType(type):
+	print("Draw ",type)
+	# change cursor depending on mode
+	# create instance
+	var newItem = drawItem.instance()
+	newItem.init(type)
+	get_parent().add_child(newItem)
+	newItem.global_position = get_global_mouse_position()
 
-func _on_Button_draw_rect_pressed():
-	pass # Replace with function body.
-
-
-func _on_Button_draw_text_pressed():
-	pass # Replace with function body.
+	# get origin anchor
