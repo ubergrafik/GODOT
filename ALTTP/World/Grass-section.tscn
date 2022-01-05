@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
+[ext_resource path="res://World/Grass-detail3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Grass-detail1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Grass-detail4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Grass-detail5.tscn" type="PackedScene" id=6]
+
+[node name="Background" type="Sprite"]
+scale = Vector2( 0.996094, 0.974609 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4096, 4096 )
+
+[node name="Grass-detail1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72.2823, 114.918 )
+
+[node name="Grass-detail2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 56.2196, 131.335 )
+
+[node name="Grass-detail4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 72.2823, 41.0421 )
+
+[node name="Grass-detail5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 72.2823, 24.6253 )
+
+[node name="Grass-detail6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 88.3451, 24.6253 )

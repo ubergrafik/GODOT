@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/Life-1.png" type="Texture" id=2]
+[ext_resource path="res://ValueAdd.tscn" type="PackedScene" id=3]
+
+[node name="Health" type="Node2D"]
+
+[node name="ValueAdd" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="ValueAdd" index="0"]
+position = Vector2( 8, 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[editable path="ValueAdd"]

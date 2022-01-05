@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Building-type-1-door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Building-type-1.png" type="Texture" id=2]
+[ext_resource path="res://World/Building-type-1-window.png" type="Texture" id=3]
+[ext_resource path="res://World/Building-type-1-doorframe.png" type="Texture" id=4]
+[ext_resource path="res://World/BuildingType1TileMap.tscn" type="PackedScene" id=5]
+
+[node name="Building-type-1" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 57.0 ]
+}
+
+[node name="BuildingTileMap" parent="." instance=ExtResource( 5 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Building-type-1" type="Sprite" parent="Sprite"]
+position = Vector2( 56, 56 )
+texture = ExtResource( 2 )
+
+[node name="Building-type-1-door" type="Sprite" parent="Sprite"]
+position = Vector2( 32, 69 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Building-type-1-door2" parent="Sprite" instance=ExtResource( 1 )]
+position = Vector2( 40, 80 )
+
+[node name="Building-type-1-window" type="Sprite" parent="Sprite"]
+position = Vector2( 12, 80 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Building-type-1-window2" type="Sprite" parent="Sprite"]
+position = Vector2( 66, 80 )
+texture = ExtResource( 3 )
+centered = false
