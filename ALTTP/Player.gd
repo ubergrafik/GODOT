@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var MainInstances = ResourceLoader.MainInstances
+
 export var ACCELERATION = 500
 export var MAX_SPEED = 80
 export var ROLL_SPEED = 120
@@ -20,9 +22,15 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitBox = $HitboxPivot/SwordHitbox
 
+signal hit_door(door)
+
 func _ready():
+	MainInstances.Player = self
 	animationTree.active = true
 	swordHitBox.knockback_vector = roll_vector
+	
+func _exit_tree():
+	MainInstances.Player = null
 
 func _process(delta):
 	match state:

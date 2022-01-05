@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Bush.gd" type="Script" id=2]
+
+[node name="Bushes" type="YSort"]
+position = Vector2( 0, 8 )
+
+[node name="Bush" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 136 )
+script = ExtResource( 2 )
+LOOTTYPE = 2
+
+[node name="Bush2" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168, 136 )
+script = ExtResource( 2 )
+
+[node name="Bush3" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184, 136 )
+script = ExtResource( 2 )
+
+[node name="Bush5" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184, 152 )
+script = ExtResource( 2 )
+
+[node name="Bush6" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168, 152 )
+script = ExtResource( 2 )
+
+[node name="Bush4" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 136 )
+script = ExtResource( 2 )
+LOOTTYPE = 3
+
+[node name="Bush7" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 136 )
+script = ExtResource( 2 )
+
+[node name="Bush11" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 136 )
+script = ExtResource( 2 )
+LOOTTYPE = 3
+
+[node name="Bush12" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 152 )
+script = ExtResource( 2 )
+
+[node name="Bush8" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 152 )
+script = ExtResource( 2 )
+
+[node name="Bush9" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 152 )
+script = ExtResource( 2 )
+
+[node name="Bush10" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 152 )
+script = ExtResource( 2 )
+LOOTTYPE = 3

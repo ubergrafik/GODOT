@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/DirtCliffTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/DirtPathTileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=3]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="DirtPathTileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 0, 0, 196611 )
+
+[node name="DirtCliffTileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 0, 196611 )

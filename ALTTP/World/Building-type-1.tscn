@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Building-type-1-door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Building-type-1.png" type="Texture" id=2]
 [ext_resource path="res://World/Building-type-1-window.png" type="Texture" id=3]
 [ext_resource path="res://World/Building-type-1-doorframe.png" type="Texture" id=4]
@@ -23,9 +22,6 @@ texture = ExtResource( 2 )
 position = Vector2( 32, 69 )
 texture = ExtResource( 4 )
 centered = false
-
-[node name="Building-type-1-door2" parent="Sprite" instance=ExtResource( 1 )]
-position = Vector2( 40, 80 )
 
 [node name="Building-type-1-window" type="Sprite" parent="Sprite"]
 position = Vector2( 12, 80 )

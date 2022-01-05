@@ -8,11 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "MainInstances",
+"language": "GDScript",
+"path": "res://MainInstances.gd"
+} ]
+_global_script_class_icons={
+"MainInstances": ""
+}
+
 [application]
 
 config/name="ALTTP-v1"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ResourceLoader="*res://ResourceLoader.gd"
 
 [display]
 
